@@ -1,11 +1,10 @@
 <template>
-	<div>
-		Hello world
-		<test></test>
-	</div>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
-
 <script setup>
-import test from './components/test.vue'
-import '@/assets/css/tailwind.css'
+useHead({
+	title: 'Test task - Nuxt (Academ Web Solutions) by Ponochovny',
+})
 </script>
