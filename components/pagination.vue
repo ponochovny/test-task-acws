@@ -111,7 +111,7 @@ const changeActivePage = (val) => {
 		const activePg = activePage.value
 		const endVal = val === 'next' ? activePg + 1 : activePg - 1
 
-		if (endVal > pages.value || endVal <= 1) return
+		if (endVal > pages.value || endVal < 1) return
 
 		activePage.value = endVal
 		emit('changePage', endVal)
