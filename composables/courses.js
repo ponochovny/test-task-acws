@@ -11,9 +11,9 @@ export const useCoursesStore = defineStore('courses', () => {
 
 	const getCourses = async (api_token, isReturn = false) => {
 		const query = new URLSearchParams({
-			paginator: 'paged',
-			order_direction: 'asc',
-			page: '1',
+			// paginator: 'cursor',
+			// order_direction: 'asc',
+			// page: '1',
 		})
 
 		try {

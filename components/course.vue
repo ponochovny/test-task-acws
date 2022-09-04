@@ -49,6 +49,4 @@ const props = defineProps({
 const { course } = toRefs(props)
 
 const router = useRouter()
-
-// console.log(course.value)
 </script>

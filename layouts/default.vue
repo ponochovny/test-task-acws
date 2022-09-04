@@ -17,13 +17,21 @@ const authStore = useAuthStore()
 if (process.server) {
 	const token = useCookie('token')
 	if (token.value) {
-		const { data, pending, error } = await useFetch(`${API_HOST}/courses`, {
-			headers: {
-				Accept: 'application/json',
-				Authorization: `Bearer ${token.value}`,
-				Connection: 'keep-alive',
-			},
+		const query = new URLSearchParams({
+			// paginator: 'cursor',
+			// order_direction: 'asc',
+			// page: '1',
 		})
+		const { data, pending, error } = await useFetch(
+			`${API_HOST}/courses?` + query,
+			{
+				headers: {
+					Accept: 'application/json',
+					Authorization: `Bearer ${token.value}`,
+					Connection: 'keep-alive',
+				},
+			}
+		)
 		if (error.value == null) {
 			// Token is valid
 			// 1. set data to store
