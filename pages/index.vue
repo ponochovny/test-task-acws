@@ -35,6 +35,9 @@ const paginationFrom = computed(() =>
 
 const pagedCourses = computed(() => {
 	const newArr = [...coursesStore.courses]
-	return newArr.slice(paginationFrom.value, paginationTo.value)
+	return newArr.slice(
+		paginationFrom.value === 1 ? 0 : paginationFrom.value,
+		paginationTo.value
+	)
 })
 </script>
